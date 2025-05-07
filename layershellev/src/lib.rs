@@ -2487,7 +2487,7 @@ impl<T: 'static> WindowState<T> {
             }
         });
         'out: loop {
-            event_loop.dispatch(Duration::from_millis(1), &mut self)?;
+            event_loop.dispatch(Duration::from_millis(100), &mut self)?;
 
             let mut messages = Vec::new();
             std::mem::swap(&mut messages, &mut self.message);
